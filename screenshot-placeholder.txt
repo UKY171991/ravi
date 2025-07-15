@@ -1,0 +1,18 @@
+# Screenshot Placeholder
+
+This file serves as a placeholder for the theme screenshot. 
+
+To complete the theme setup:
+
+1. Create a screenshot.png file (1200x900 pixels recommended)
+2. Place it in the root theme directory
+3. The screenshot should show the theme's homepage design
+
+The screenshot will be displayed in the WordPress admin under Appearance > Themes.
+
+For best results, the screenshot should:
+- Be exactly 1200x900 pixels
+- Show the homepage hero section
+- Include navigation and key design elements
+- Be saved as a PNG file
+- Be named exactly "screenshot.png"
