@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+    <rect width="100%" height="100%" fill="#3b82f6"/>
+    <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="26" fill="white" text-anchor="middle" dy="0.35em">About Our Company</text>
+    <circle cx="150" cy="100" r="20" fill="rgba(255,255,255,0.1)"/>
+    <circle cx="450" cy="100" r="15" fill="rgba(255,255,255,0.1)"/>
+    <circle cx="300" cy="300" r="25" fill="rgba(255,255,255,0.1)"/>
+</svg>

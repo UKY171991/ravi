@@ -5,49 +5,72 @@
 
 get_header(); ?>
 
-<section class="page-hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 150px 0 100px; margin-top: 100px;">
+<section class="page-hero bg-primary text-white py-5" style="margin-top: 100px;">
     <div class="container">
         <div class="text-center">
-            <h1>About Our Company</h1>
-            <p>Learn more about our mission, vision, and the team behind our success</p>
+            <h1 class="display-4 fw-bold">About Our Company</h1>
+            <p class="lead">Learn more about our mission, vision, and the team behind our success</p>
         </div>
     </div>
 </section>
 
-<section class="about-detailed" style="padding: 100px 0;">
+<section class="about-detailed py-5">
     <div class="container">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Who We Are</h2>
-                <p>We are a leading IT solutions provider with years of experience in delivering innovative technology solutions to businesses worldwide. Our team of expert professionals is dedicated to helping your business achieve its digital transformation goals.</p>
-                
-                <p>Founded with the vision of making technology accessible and efficient for all businesses, we have grown to become a trusted partner for companies ranging from startups to large enterprises.</p>
-                
-                <h3>Our Mission</h3>
-                <p>To accelerate innovation with world-class tech teams and provide comprehensive IT solutions that drive business growth and success.</p>
-                
-                <h3>Our Vision</h3>
-                <p>To be the global leader in IT solutions, helping businesses transform and thrive in the digital age.</p>
-                
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="number">500+</div>
-                        <div class="label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="number">200+</div>
-                        <div class="label">Happy Clients</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="number">50+</div>
-                        <div class="label">Expert Team</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="number">10+</div>
-                        <div class="label">Years Experience</div>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-text">
+                    <h2 class="fw-bold mb-4">Who We Are</h2>
+                    <p class="mb-4">We are a leading IT solutions provider with years of experience in delivering innovative technology solutions to businesses worldwide. Our team of expert professionals is dedicated to helping your business achieve its digital transformation goals.</p>
+                    
+                    <p class="mb-4">Founded with the vision of making technology accessible and efficient for all businesses, we have grown to become a trusted partner for companies ranging from startups to large enterprises.</p>
+                    
+                    <h3 class="fw-bold mb-3">Our Mission</h3>
+                    <p class="mb-4">To accelerate innovation with world-class tech teams and provide comprehensive IT solutions that drive business growth and success.</p>
+                    
+                    <h3 class="fw-bold mb-3">Our Vision</h3>
+                    <p class="mb-4">To be the global leader in IT solutions, helping businesses transform and thrive in the digital age.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-image text-center">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-detailed.jpg" 
+                         alt="About Us" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="stats-section bg-primary text-white p-5 rounded">
+                    <div class="row text-center">
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="stat-item">
+                                <div class="display-4 fw-bold mb-2">500+</div>
+                                <div class="h5">Projects Completed</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="stat-item">
+                                <div class="display-4 fw-bold mb-2">200+</div>
+                                <div class="h5">Happy Clients</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="stat-item">
+                                <div class="display-4 fw-bold mb-2">50+</div>
+                                <div class="h5">Expert Team</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="stat-item">
+                                <div class="display-4 fw-bold mb-2">10+</div>
+                                <div class="h5">Years Experience</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
             <div class="about-image">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-detailed.jpg" alt="About Our Company" style="width: 100%; border-radius: 10px;">
             </div>

@@ -1,19 +1,21 @@
-# Techwix WordPress Theme
+# Techwix Lite - WordPress Theme
 
-A modern, responsive WordPress theme based on the Techwix IT solutions design. This theme is perfect for IT companies, technology businesses, and service providers.
+A modern, responsive WordPress theme designed for IT companies and technology service providers. This theme replicates the professional layout and design from the Techwix IT solution website with Bootstrap 5 integration.
 
 ## Features
 
 - **Modern Design**: Clean, professional design with a blue color scheme
+- **Bootstrap 5 Framework**: Latest Bootstrap for responsive design and components
 - **Fully Responsive**: Works perfectly on all devices and screen sizes
+- **Custom Homepage**: Dedicated front-page template with multiple sections
+- **Google Fonts**: Modern typography with Poppins font family
+- **FontAwesome Icons**: Latest icon library for enhanced visual elements
 - **Custom Post Types**: Built-in Services and Team Members post types
-- **Contact Form**: Functional contact form with email notifications
+- **Contact Form**: Functional contact form with Bootstrap styling
 - **SEO Optimized**: Clean code structure for better search engine rankings
 - **Fast Loading**: Optimized CSS and JavaScript for quick page loads
 - **Customizer Options**: Easy customization through WordPress Customizer
 - **Multiple Page Templates**: Home, About, Services, Contact, Blog, and more
-- **Font Awesome Icons**: Beautiful icons throughout the design
-- **Google Fonts**: Modern typography with Roboto font family
 
 ## Installation
 

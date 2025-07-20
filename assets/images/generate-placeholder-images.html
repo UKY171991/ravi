@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images</title>
+    <style>
+        .placeholder {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        .placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%, rgba(0,0,0,0.1) 100%);
+            pointer-events: none;
+        }
+        
+        .placeholder-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+        
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .circle1 { width: 60px; height: 60px; top: 20%; left: 20%; }
+        .circle2 { width: 40px; height: 40px; top: 30%; right: 25%; }
+        .circle3 { width: 80px; height: 80px; bottom: 25%; left: 30%; }
+        
+        /* Specific image styles */
+        .about-img { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); width: 500px; height: 400px; }
+        .team1-img { background: linear-gradient(135deg, #374151 0%, #6b7280 100%); width: 300px; height: 300px; }
+        .team2-img { background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%); width: 300px; height: 300px; }
+        .team3-img { background: linear-gradient(135deg, #111827 0%, #374151 100%); width: 300px; height: 300px; }
+        .team4-img { background: linear-gradient(135deg, #0f172a 0%, #1f2937 100%); width: 300px; height: 300px; }
+        .detailed-img { background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%); width: 600px; height: 400px; }
+        .mission-img { background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%); width: 500px; height: 400px; }
+        .hero1-img { background: linear-gradient(135deg, #059669 0%, #10b981 100%); width: 350px; height: 400px; }
+        .hero2-img { background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); width: 250px; height: 320px; }
+    </style>
+</head>
+<body>
+    <h1>Professional IT Solution Placeholder Images</h1>
+    <p>Right-click on each image and save to use as placeholders</p>
+    
+    <div>
+        <h3>About Section</h3>
+        <div class="placeholder about-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="decorative-circle circle3"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 24px;">About Our Company</div>
+                <div style="font-size: 14px; margin-top: 10px;">Professional IT Solutions</div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Team Members</h3>
+        <div class="placeholder team1-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 18px;">James Smith</div>
+                <div style="font-size: 12px; margin-top: 5px;">CFO Apple Corp</div>
+            </div>
+        </div>
+        
+        <div class="placeholder team2-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 18px;">Monica Blews</div>
+                <div style="font-size: 12px; margin-top: 5px;">Manager</div>
+            </div>
+        </div>
+        
+        <div class="placeholder team3-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 18px;">Mike Wilson</div>
+                <div style="font-size: 12px; margin-top: 5px;">Manager, BusinessPro</div>
+            </div>
+        </div>
+        
+        <div class="placeholder team4-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 18px;">Emma Davis</div>
+                <div style="font-size: 12px; margin-top: 5px;">Director, GlobalTech</div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3>Additional Images</h3>
+        <div class="placeholder detailed-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="decorative-circle circle3"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 24px;">Professional IT Solutions</div>
+                <div style="font-size: 14px; margin-top: 10px;">Enterprise Technology Services</div>
+            </div>
+        </div>
+        
+        <div class="placeholder mission-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="decorative-circle circle3"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 22px;">Our Mission & Vision</div>
+                <div style="font-size: 14px; margin-top: 10px;">Innovation Through Technology</div>
+            </div>
+        </div>
+        
+        <div class="placeholder hero1-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 20px;">Professional Team</div>
+                <div style="font-size: 12px; margin-top: 8px;">Expert IT Professionals</div>
+            </div>
+        </div>
+        
+        <div class="placeholder hero2-img">
+            <div class="decorative-circle circle1"></div>
+            <div class="decorative-circle circle2"></div>
+            <div class="placeholder-text">
+                <div style="font-size: 18px;">Modern Office</div>
+                <div style="font-size: 12px; margin-top: 8px;">Advanced Technology</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactive hover effects
+        document.querySelectorAll('.placeholder').forEach(placeholder => {
+            placeholder.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            placeholder.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

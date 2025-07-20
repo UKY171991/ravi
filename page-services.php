@@ -5,49 +5,57 @@
 
 get_header(); ?>
 
-<section class="page-hero" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 150px 0 100px; margin-top: 100px;">
+<section class="page-hero bg-primary text-white py-5" style="margin-top: 100px;">
     <div class="container">
         <div class="text-center">
-            <h1>Our Services</h1>
-            <p>Comprehensive IT solutions to help your business grow and succeed</p>
+            <h1 class="display-4 fw-bold">Our Services</h1>
+            <p class="lead">Comprehensive IT solutions to help your business grow and succeed</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>" class="text-white">Home</a></li>
+                    <li class="breadcrumb-item active text-white">Services</li>
+                </ol>
+            </nav>
         </div>
     </div>
 </section>
 
-<section class="services-detailed" style="padding: 100px 0;">
+<section class="services-detailed py-5">
     <div class="container">
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fas fa-server"></i>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100 p-4 border rounded-3 text-center shadow-sm">
+                    <div class="service-icon mb-4">
+                        <i class="fas fa-server fa-4x text-primary"></i>
+                    </div>
+                    <h3 class="fw-bold mb-3">Infrastructure Technology</h3>
+                    <p class="mb-4">Highly professional IT experts providing robust infrastructure solutions for your business needs. We design, implement, and maintain IT infrastructure that scales with your business.</p>
+                    <ul class="list-unstyled text-start mb-4">
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Network Design & Implementation</li>
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Server Management</li>
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Cloud Infrastructure</li>
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>System Integration</li>
+                    </ul>
+                    <a href="<?php echo home_url('/service/infrastructure-technology'); ?>" class="btn btn-primary">Learn More</a>
                 </div>
-                <h3>Infrastructure Technology</h3>
-                <p>Highly professional IT experts providing robust infrastructure solutions for your business needs. We design, implement, and maintain IT infrastructure that scales with your business.</p>
-                <ul style="text-align: left; margin: 20px 0; color: #666;">
-                    <li>Network Design & Implementation</li>
-                    <li>Server Management</li>
-                    <li>Cloud Infrastructure</li>
-                    <li>System Integration</li>
-                </ul>
-                <a href="<?php echo home_url('/service/infrastructure-technology'); ?>" class="btn-primary" style="display: inline-block; margin-top: 20px;">Learn More</a>
             </div>
             
-            <div class="service-card">
-                <div class="icon">
-                    <i class="fas fa-shield-alt"></i>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card h-100 p-4 border rounded-3 text-center shadow-sm">
+                    <div class="service-icon mb-4">
+                        <i class="fas fa-shield-alt fa-4x text-primary"></i>
+                    </div>
+                    <h3 class="fw-bold mb-3">Security Management</h3>
+                    <p class="mb-4">Advanced security solutions to protect your data and systems from cyber threats and vulnerabilities. Our comprehensive security approach ensures your business is always protected.</p>
+                    <ul class="list-unstyled text-start mb-4">
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Cybersecurity Assessment</li>
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Threat Detection & Response</li>
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Data Encryption</li>
+                        <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Security Monitoring</li>
+                    </ul>
+                    <a href="<?php echo home_url('/service/security-management'); ?>" class="btn btn-primary">Learn More</a>
                 </div>
-                <h3>Security Management</h3>
-                <p>Advanced security solutions to protect your data and systems from cyber threats and vulnerabilities. Our comprehensive security approach ensures your business is always protected.</p>
-                <ul style="text-align: left; margin: 20px 0; color: #666;">
-                    <li>Cybersecurity Assessment</li>
-                    <li>Threat Detection & Response</li>
-                    <li>Data Encryption</li>
-                    <li>Security Monitoring</li>
-                </ul>
-                <a href="<?php echo home_url('/service/security-management'); ?>" class="btn-primary" style="display: inline-block; margin-top: 20px;">Learn More</a>
             </div>
-            
-            <div class="service-card">
                 <div class="icon">
                     <i class="fas fa-database"></i>
                 </div>

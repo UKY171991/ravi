@@ -32,9 +32,22 @@ add_action('after_setup_theme', 'techwix_setup');
 
 // Enqueue scripts and styles
 function techwix_scripts() {
-    wp_enqueue_style('techwix-style', get_stylesheet_uri(), array(), '1.0.0');
+    // Enqueue Bootstrap 5
+    wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css', array(), '5.3.0');
+    
+    // Enqueue FontAwesome
+    wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', array(), '6.5.0');
+    
+    // Enqueue Google Fonts (Poppins)
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap', array(), null);
+    
+    // Theme styles
+    wp_enqueue_style('techwix-style', get_stylesheet_uri(), array('bootstrap', 'fontawesome', 'google-fonts'), '1.0.0');
     wp_enqueue_style('techwix-animations', get_template_directory_uri() . '/assets/css/animations.css', array('techwix-style'), '1.0.0');
-    wp_enqueue_script('techwix-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '1.0.0', true);
+    
+    // Scripts
+    wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js', array('jquery'), '5.3.0', true);
+    wp_enqueue_script('techwix-script', get_template_directory_uri() . '/assets/js/script.js', array('jquery', 'bootstrap-js'), '1.0.0', true);
     
     // Localize script for AJAX
     wp_localize_script('techwix-script', 'techwix_ajax', array(
@@ -267,95 +280,92 @@ function techwix_save_meta_boxes($post_id) {
 }
 add_action('save_post', 'techwix_save_meta_boxes');
 
-// Customizer options
+// Add theme customizer support
 function techwix_customize_register($wp_customize) {
-    // Hero Section
-    $wp_customize->add_section('techwix_hero', array(
-        'title' => __('Hero Section', 'techwix'),
+    // Site Identity Section
+    $wp_customize->add_section('techwix_header_section', array(
+        'title' => __('Header Settings', 'techwix'),
         'priority' => 30,
     ));
     
-    $wp_customize->add_setting('hero_title', array(
-        'default' => 'WE PROVIDE 100% & TRUSTABLE',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    
-    $wp_customize->add_control('hero_title', array(
-        'label' => __('Hero Title', 'techwix'),
-        'section' => 'techwix_hero',
-        'type' => 'text',
-    ));
-    
-    $wp_customize->add_setting('hero_subtitle', array(
-        'default' => 'IT Solution',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    
-    $wp_customize->add_control('hero_subtitle', array(
-        'label' => __('Hero Subtitle', 'techwix'),
-        'section' => 'techwix_hero',
-        'type' => 'text',
-    ));
-    
-    $wp_customize->add_setting('hero_description', array(
-        'default' => 'We provide the most responsive and functional IT design for companies and businesses worldwide.',
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ));
-    
-    $wp_customize->add_control('hero_description', array(
-        'label' => __('Hero Description', 'techwix'),
-        'section' => 'techwix_hero',
-        'type' => 'textarea',
-    ));
-    
-    // Contact Information
-    $wp_customize->add_section('techwix_contact', array(
-        'title' => __('Contact Information', 'techwix'),
-        'priority' => 35,
-    ));
-    
-    $wp_customize->add_setting('contact_phone', array(
+    // Top Bar Phone
+    $wp_customize->add_setting('techwix_topbar_phone', array(
         'default' => '+00(1) 123 456 7890',
         'sanitize_callback' => 'sanitize_text_field',
     ));
     
-    $wp_customize->add_control('contact_phone', array(
-        'label' => __('Phone Number', 'techwix'),
-        'section' => 'techwix_contact',
+    $wp_customize->add_control('techwix_topbar_phone', array(
+        'label' => __('Top Bar Phone', 'techwix'),
+        'section' => 'techwix_header_section',
         'type' => 'text',
     ));
     
-    $wp_customize->add_setting('contact_email', array(
+    // Top Bar Email
+    $wp_customize->add_setting('techwix_topbar_email', array(
         'default' => 'infotechmax@ourmail.com',
         'sanitize_callback' => 'sanitize_email',
     ));
     
-    $wp_customize->add_control('contact_email', array(
-        'label' => __('Email Address', 'techwix'),
-        'section' => 'techwix_contact',
+    $wp_customize->add_control('techwix_topbar_email', array(
+        'label' => __('Top Bar Email', 'techwix'),
+        'section' => 'techwix_header_section',
         'type' => 'email',
     ));
     
-    $wp_customize->add_setting('contact_address', array(
-        'default' => 'New ipsum dolor amet, eiusmod adipisicing 147 NewYors, NY Adipisicing 123',
-        'sanitize_callback' => 'sanitize_textarea_field',
+    // Social Media Section
+    $wp_customize->add_section('techwix_social_section', array(
+        'title' => __('Social Media Links', 'techwix'),
+        'priority' => 35,
     ));
     
-    $wp_customize->add_control('contact_address', array(
-        'label' => __('Address', 'techwix'),
-        'section' => 'techwix_contact',
-        'type' => 'textarea',
-    ));
+    $social_networks = array(
+        'facebook' => 'Facebook',
+        'twitter' => 'Twitter',
+        'linkedin' => 'LinkedIn',
+        'instagram' => 'Instagram',
+    );
+    
+    foreach ($social_networks as $network => $label) {
+        $wp_customize->add_setting('techwix_' . $network, array(
+            'default' => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ));
+        
+        $wp_customize->add_control('techwix_' . $network, array(
+            'label' => __($label . ' URL', 'techwix'),
+            'section' => 'techwix_social_section',
+            'type' => 'url',
+        ));
+    }
 }
 add_action('customize_register', 'techwix_customize_register');
 
-// Excerpt length
+// Customizer CSS output
+function techwix_customizer_css() {
+    ?>
+    <style type="text/css">
+        :root {
+            --primary-color: <?php echo get_theme_mod('techwix_primary_color', '#1e3a8a'); ?>;
+            --secondary-color: <?php echo get_theme_mod('techwix_secondary_color', '#3b82f6'); ?>;
+        }
+    </style>
+    <?php
+}
+add_action('wp_head', 'techwix_customizer_css');
+
+// Add excerpt support for pages
+function techwix_add_excerpts_to_pages() {
+    add_post_type_support('page', 'excerpt');
+}
+add_action('init', 'techwix_add_excerpts_to_pages');
+
+// Custom excerpt length
 function techwix_excerpt_length($length) {
     return 20;
 }
-add_filter('excerpt_length', 'techwix_excerpt_length');
+add_filter('excerpt_length', 'techwix_excerpt_length', 999);
 
-// Excerpt more
+// Custom excerpt more
 function techwix_excerpt_more($more) {
     return '...';
 }
@@ -363,16 +373,42 @@ add_filter('excerpt_more', 'techwix_excerpt_more');
 
 // Contact form handling
 function techwix_handle_contact_form() {
-    if (isset($_POST['contact_form_submit'])) {
-        $name = sanitize_text_field($_POST['name']);
-        $email = sanitize_email($_POST['email']);
-        $subject = sanitize_text_field($_POST['subject']);
-        $message = sanitize_textarea_field($_POST['message']);
+    if (isset($_POST['submit_contact']) || isset($_POST['contact_form_submit'])) {
+        // Verify nonce for security
+        if (!wp_verify_nonce($_POST['contact_nonce'] ?? '', 'contact_form_nonce')) {
+            wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
+            exit;
+        }
+        
+        $name = sanitize_text_field($_POST['name'] ?? '');
+        $email = sanitize_email($_POST['email'] ?? '');
+        $phone = sanitize_text_field($_POST['phone'] ?? '');
+        $subject = sanitize_text_field($_POST['subject'] ?? 'Contact Form Submission');
+        $message = sanitize_textarea_field($_POST['message'] ?? '');
+        
+        // Validate required fields
+        if (empty($name) || empty($email) || empty($message)) {
+            wp_redirect(add_query_arg('contact', 'error', wp_get_referer()));
+            exit;
+        }
         
         $to = get_option('admin_email');
         $email_subject = 'Contact Form: ' . $subject;
-        $email_body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
-        $headers = array('Content-Type: text/html; charset=UTF-8', "From: $name <$email>");
+        $email_body = "<h3>New Contact Form Submission</h3>";
+        $email_body .= "<p><strong>Name:</strong> $name</p>";
+        $email_body .= "<p><strong>Email:</strong> $email</p>";
+        if (!empty($phone)) {
+            $email_body .= "<p><strong>Phone:</strong> $phone</p>";
+        }
+        $email_body .= "<p><strong>Subject:</strong> $subject</p>";
+        $email_body .= "<p><strong>Message:</strong></p>";
+        $email_body .= "<p>" . nl2br($message) . "</p>";
+        
+        $headers = array(
+            'Content-Type: text/html; charset=UTF-8',
+            'From: ' . get_bloginfo('name') . ' <' . get_option('admin_email') . '>',
+            'Reply-To: ' . $name . ' <' . $email . '>'
+        );
         
         if (wp_mail($to, $email_subject, $email_body, $headers)) {
             wp_redirect(add_query_arg('contact', 'success', wp_get_referer()));
@@ -383,4 +419,184 @@ function techwix_handle_contact_form() {
     }
 }
 add_action('template_redirect', 'techwix_handle_contact_form');
+
+// Newsletter form handling
+function techwix_handle_newsletter() {
+    if (isset($_POST['newsletter_submit'])) {
+        // Verify nonce for security
+        if (!wp_verify_nonce($_POST['newsletter_nonce'] ?? '', 'newsletter_nonce')) {
+            wp_redirect(add_query_arg('newsletter', 'error', wp_get_referer()));
+            exit;
+        }
+        
+        $email = sanitize_email($_POST['newsletter_email'] ?? '');
+        
+        // Validate email
+        if (empty($email) || !is_email($email)) {
+            wp_redirect(add_query_arg('newsletter', 'error', wp_get_referer()));
+            exit;
+        }
+        
+        // Here you can add the email to your newsletter service
+        // For now, we'll just send a notification to admin
+        $to = get_option('admin_email');
+        $subject = 'New Newsletter Subscription';
+        $message = "New newsletter subscription from: " . $email;
+        $headers = array('Content-Type: text/html; charset=UTF-8');
+        
+        if (wp_mail($to, $subject, $message, $headers)) {
+            wp_redirect(add_query_arg('newsletter', 'success', wp_get_referer()));
+        } else {
+            wp_redirect(add_query_arg('newsletter', 'error', wp_get_referer()));
+        }
+        exit;
+    }
+}
+add_action('template_redirect', 'techwix_handle_newsletter');
+
+// AJAX Contact Form Handler
+function handle_contact_form_ajax() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'techwix_nonce')) {
+        wp_die('Security check failed');
+    }
+    
+    $name = sanitize_text_field($_POST['name'] ?? '');
+    $email = sanitize_email($_POST['email'] ?? '');
+    $phone = sanitize_text_field($_POST['phone'] ?? '');
+    $subject = sanitize_text_field($_POST['subject'] ?? 'Contact Form Submission');
+    $message = sanitize_textarea_field($_POST['message'] ?? '');
+    
+    // Validate required fields
+    if (empty($name) || empty($email) || empty($message)) {
+        wp_send_json_error('Please fill in all required fields.');
+    }
+    
+    $to = get_option('admin_email');
+    $email_subject = 'Contact Form: ' . $subject;
+    $email_body = "<h3>New Contact Form Submission</h3>";
+    $email_body .= "<p><strong>Name:</strong> $name</p>";
+    $email_body .= "<p><strong>Email:</strong> $email</p>";
+    if (!empty($phone)) {
+        $email_body .= "<p><strong>Phone:</strong> $phone</p>";
+    }
+    $email_body .= "<p><strong>Subject:</strong> $subject</p>";
+    $email_body .= "<p><strong>Message:</strong></p>";
+    $email_body .= "<p>" . nl2br($message) . "</p>";
+    
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'From: ' . get_bloginfo('name') . ' <' . get_option('admin_email') . '>',
+        'Reply-To: ' . $name . ' <' . $email . '>'
+    );
+    
+    if (wp_mail($to, $email_subject, $email_body, $headers)) {
+        wp_send_json_success('Message sent successfully!');
+    } else {
+        wp_send_json_error('Failed to send message. Please try again.');
+    }
+}
+add_action('wp_ajax_handle_contact_form', 'handle_contact_form_ajax');
+add_action('wp_ajax_nopriv_handle_contact_form', 'handle_contact_form_ajax');
+
+// AJAX Newsletter Form Handler
+function handle_newsletter_form_ajax() {
+    // Verify nonce
+    if (!wp_verify_nonce($_POST['nonce'], 'techwix_nonce')) {
+        wp_die('Security check failed');
+    }
+    
+    $email = sanitize_email($_POST['newsletter_email'] ?? '');
+    
+    // Validate email
+    if (empty($email) || !is_email($email)) {
+        wp_send_json_error('Please enter a valid email address.');
+    }
+    
+    // Here you can add the email to your newsletter service
+    // For now, we'll just send a notification to admin
+    $to = get_option('admin_email');
+    $subject = 'New Newsletter Subscription';
+    $message = "New newsletter subscription from: " . $email;
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    
+    if (wp_mail($to, $subject, $message, $headers)) {
+        wp_send_json_success('Successfully subscribed to newsletter!');
+    } else {
+        wp_send_json_error('Failed to subscribe. Please try again.');
+    }
+}
+add_action('wp_ajax_handle_newsletter_form', 'handle_newsletter_form_ajax');
+add_action('wp_ajax_nopriv_handle_newsletter_form', 'handle_newsletter_form_ajax');
+
+// Bootstrap 5 Menu Walker
+class Techwix_Bootstrap_Walker extends Walker_Nav_Menu {
+    
+    public function start_lvl(&$output, $depth = 0, $args = null) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
+    }
+    
+    public function end_lvl(&$output, $depth = 0, $args = null) {
+        $indent = str_repeat("\t", $depth);
+        $output .= "$indent</ul>\n";
+    }
+    
+    public function start_el(&$output, $item, $depth = 0, $args = null, $id = 0) {
+        $indent = ($depth) ? str_repeat("\t", $depth) : '';
+        
+        $classes = empty($item->classes) ? array() : (array) $item->classes;
+        $classes[] = 'menu-item-' . $item->ID;
+        
+        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+        
+        $has_children = in_array('menu-item-has-children', $classes);
+        
+        if ($depth === 0) {
+            $class_names = $has_children ? 'nav-item dropdown' : 'nav-item';
+        } else {
+            $class_names = '';
+        }
+        
+        $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+        
+        $id = apply_filters('nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args);
+        $id = $id ? ' id="' . esc_attr($id) . '"' : '';
+        
+        $output .= $indent . '<li' . $id . $class_names .'>';
+        
+        $attributes = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) .'"' : '';
+        $attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target     ) .'"' : '';
+        $attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn        ) .'"' : '';
+        $attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url        ) .'"' : '';
+        
+        if ($depth === 0) {
+            $link_class = $has_children ? 'nav-link dropdown-toggle' : 'nav-link';
+            if ($has_children) {
+                $attributes .= ' data-bs-toggle="dropdown" role="button" aria-expanded="false"';
+            }
+        } else {
+            $link_class = 'dropdown-item';
+        }
+        
+        $attributes .= ' class="' . $link_class . '"';
+        
+        $item_output = isset($args->before) ? $args->before : '';
+        $item_output .= '<a' . $attributes .'>';
+        $item_output .= (isset($args->link_before) ? $args->link_before : '') . apply_filters('the_title', $item->title, $item->ID) . (isset($args->link_after) ? $args->link_after : '');
+        $item_output .= '</a>';
+        $item_output .= isset($args->after) ? $args->after : '';
+        
+        $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+    }
+    
+    public function end_el(&$output, $item, $depth = 0, $args = null) {
+        $output .= "</li>\n";
+    }
+}
+
+// Helper function to get customizer values
+function techwix_get_option($option_name, $default = '') {
+    return get_theme_mod($option_name, $default);
+}
 ?>

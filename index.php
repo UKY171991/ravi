@@ -8,21 +8,178 @@
 
 get_header(); ?>
 
-<!-- Hero Section -->
-<section class="hero">
+<!-- Blog Header -->
+<section class="blog-header bg-primary text-white py-5" style="margin-top: 100px;">
     <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>WE PROVIDE 100% & TRUSTABLE</h1>
-                <h2 class="subtitle">IT Solution</h2>
-                <p>We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
-                <div class="hero-buttons">
-                    <a href="<?php echo home_url('/about-us'); ?>" class="btn-primary">Read More</a>
-                    <a href="<?php echo home_url('/services'); ?>" class="btn-secondary">Our Services</a>
-                </div>
+        <div class="text-center">
+            <h1 class="display-4 fw-bold">Blog</h1>
+            <p class="lead">Latest insights and updates from our team</p>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Content -->
+<section class="blog-content py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <?php if (have_posts()) : ?>
+                    <div class="row g-4">
+                        <?php while (have_posts()) : the_post(); ?>
+                            <div class="col-md-6">
+                                <article id="post-<?php the_ID(); ?>" <?php post_class('blog-card h-100'); ?>>
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <div class="blog-image">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_post_thumbnail('techwix-blog', array('class' => 'img-fluid w-100')); ?>
+                                            </a>
+                                        </div>
+                                    <?php endif; ?>
+                                    
+                                    <div class="blog-content p-4">
+                                        <div class="blog-meta mb-3">
+                                            <span class="text-muted me-3">
+                                                <i class="fas fa-calendar me-1"></i>
+                                                <?php echo get_the_date(); ?>
+                                            </span>
+                                            <span class="text-muted">
+                                                <i class="fas fa-user me-1"></i>
+                                                <?php the_author(); ?>
+                                            </span>
+                                        </div>
+                                        
+                                        <h3 class="mb-3">
+                                            <a href="<?php the_permalink(); ?>" class="text-decoration-none">
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h3>
+                                        
+                                        <div class="blog-excerpt mb-3">
+                                            <?php the_excerpt(); ?>
+                                        </div>
+                                        
+                                        <a href="<?php the_permalink(); ?>" class="btn btn-outline-primary">
+                                            Read More <i class="fas fa-arrow-right ms-1"></i>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        <?php endwhile; ?>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination-wrapper mt-5">
+                        <?php
+                        the_posts_pagination(array(
+                            'mid_size' => 2,
+                            'prev_text' => '<i class="fas fa-chevron-left"></i> Previous',
+                            'next_text' => 'Next <i class="fas fa-chevron-right"></i>',
+                            'class' => 'pagination justify-content-center'
+                        ));
+                        ?>
+                    </div>
+                    
+                <?php else : ?>
+                    <div class="no-posts text-center py-5">
+                        <h3>No Posts Found</h3>
+                        <p class="text-muted">There are no blog posts to display at the moment.</p>
+                        <a href="<?php echo home_url(); ?>" class="btn btn-primary">Back to Home</a>
+                    </div>
+                <?php endif; ?>
             </div>
-            <div class="hero-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-image.png" alt="IT Solutions" />
+            
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <aside class="blog-sidebar">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget mb-4">
+                        <h5 class="widget-title fw-bold mb-3">Search</h5>
+                        <form class="search-form" method="get" action="<?php echo home_url('/'); ?>">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="Search..." 
+                                       name="s" value="<?php echo get_search_query(); ?>">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Recent Posts Widget -->
+                    <div class="sidebar-widget mb-4">
+                        <h5 class="widget-title fw-bold mb-3">Recent Posts</h5>
+                        <?php
+                        $recent_posts = new WP_Query(array(
+                            'posts_per_page' => 5,
+                            'post_status' => 'publish'
+                        ));
+                        
+                        if ($recent_posts->have_posts()) :
+                        ?>
+                            <ul class="list-unstyled">
+                                <?php while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
+                                    <li class="mb-3">
+                                        <a href="<?php the_permalink(); ?>" class="d-flex text-decoration-none">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <div class="recent-post-thumb me-3">
+                                                    <?php the_post_thumbnail('thumbnail', array('class' => 'img-fluid rounded', 'style' => 'width: 60px; height: 60px; object-fit: cover;')); ?>
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="recent-post-content">
+                                                <h6 class="mb-1"><?php the_title(); ?></h6>
+                                                <small class="text-muted"><?php echo get_the_date(); ?></small>
+                                            </div>
+                                        </a>
+                                    </li>
+                                <?php endwhile; ?>
+                            </ul>
+                        <?php
+                        wp_reset_postdata();
+                        endif;
+                        ?>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget mb-4">
+                        <h5 class="widget-title fw-bold mb-3">Categories</h5>
+                        <ul class="list-unstyled">
+                            <?php
+                            $categories = get_categories();
+                            foreach ($categories as $category) :
+                            ?>
+                                <li class="mb-2">
+                                    <a href="<?php echo get_category_link($category->term_id); ?>" class="text-decoration-none d-flex justify-content-between">
+                                        <span><?php echo $category->name; ?></span>
+                                        <span class="badge bg-secondary"><?php echo $category->count; ?></span>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget mb-4">
+                        <h5 class="widget-title fw-bold mb-3">Tags</h5>
+                        <div class="tag-cloud">
+                            <?php
+                            $tags = get_tags();
+                            foreach ($tags as $tag) :
+                            ?>
+                                <a href="<?php echo get_tag_link($tag->term_id); ?>" class="badge bg-light text-dark text-decoration-none me-2 mb-2">
+                                    <?php echo $tag->name; ?>
+                                </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php get_footer(); ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TECW0138.png" alt="IT Infrastructure" class="hero-img-2" />
+                </div>
             </div>
         </div>
     </div>
@@ -35,6 +192,23 @@ get_header(); ?>
             <h2>Our Services</h2>
             <p>We provide comprehensive IT solutions to help your business grow and succeed in the digital world.</p>
         </div>
+        
+        <!-- Services Quick Links -->
+        <div class="services-quick-links">
+            <a href="<?php echo home_url('/service/infrastructure-technology'); ?>" class="service-link">
+                <i class="fas fa-users"></i>
+                Highly professional IT experts
+            </a>
+            <a href="<?php echo home_url('/service/infrastructure-technology'); ?>" class="service-link">
+                <i class="fas fa-server"></i>
+                Infrastructure Technology
+            </a>
+            <a href="<?php echo home_url('/service/quality-control'); ?>" class="service-link">
+                <i class="fas fa-shield-alt"></i>
+                Quality Control System
+            </a>
+        </div>
+        
         <div class="services-grid">
             <div class="service-card">
                 <div class="icon">
@@ -143,7 +317,7 @@ get_header(); ?>
                 </div>
             </div>
             <div class="contact-form">
-                <h3>Leave Us Messages</h3>
+                <h3>LEAVE US MESSAGES</h3>
                 <form action="#" method="post">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
