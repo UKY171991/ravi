@@ -27,30 +27,111 @@ body {
     padding: 0 15px;
 }
 
-/* Custom Bootstrap Enhancements */
-.btn-primary {
-    background-color: #1e3a8a;
-    border-color: #1e3a8a;
+/* Header Styles */
+.main-header {
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #667eea !important;
+}
+
+.navbar-brand i {
+    color: #667eea !important;
+}
+
+.navbar-nav .nav-link {
     font-weight: 500;
+    color: #374151 !important;
+    padding: 0.75rem 1rem !important;
+    transition: color 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: #1e40af;
-    border-color: #1e40af;
+.navbar-nav .nav-link:hover {
+    color: #667eea !important;
 }
 
+.cart-icon {
+    color: #374151 !important;
+    font-size: 1.1rem;
+}
+
+/* Color Theme Updates */
 .text-primary {
-    color: #1e3a8a !important;
+    color: #667eea !important;
 }
 
 .bg-primary {
-    background-color: #1e3a8a !important;
+    background-color: #667eea !important;
+}
+
+/* Shopping cart icon */
+.cart-icon {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+    color: #667eea !important;
+}
+
+.cart-count {
+    font-size: 0.65rem;
+    min-width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #667eea !important;
+}
+
+.btn-primary {
+    background: #667eea !important;
+    border-color: #667eea !important;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #5b6cde !important;
+    border-color: #5b6cde !important;
+}
+
+/* Button Enhancements */
+.btn-light {
+    background: #fff !important;
+    border-color: #fff !important;
+    color: #667eea !important;
+    font-weight: 600;
+}
+
+.btn-light:hover {
+    background: #f8fafc !important;
+    border-color: #f8fafc !important;
+    color: #5b6cde !important;
+}
+
+.btn-outline-light {
+    border-color: rgba(255,255,255,0.5) !important;
+    color: #fff !important;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255,255,255,0.1) !important;
+    border-color: #fff !important;
+    color: #fff !important;
 }
 
 /* --- HERO SECTION MATCHING REFERENCE --- */
 .hero-section {
-    background: #1877f3 !important;
-    min-height: 650px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
@@ -59,7 +140,61 @@ body {
     padding-bottom: 0 !important;
 }
 
+/* Hero Background Shapes - Matching Reference Exactly */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 60vh solid #3b82f6;
+    border-right: 25vw solid transparent;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 50vh solid #60a5fa;
+    border-left: 30vw solid transparent;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+/* Bottom triangles */
+.hero-section .hero-bg-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 40vh solid #8b5cf6;
+    border-right: 20vw solid transparent;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.hero-section .hero-bg-bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 35vh solid #a855f7;
+    border-left: 25vw solid transparent;
+    z-index: 1;
+    opacity: 0.8;
+}
+
 .hero-content {
+    position: relative;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,26 +204,36 @@ body {
     padding-bottom: 40px;
 }
 
+.hero-image {
+    position: relative;
+    z-index: 5;
+}
+
 .hero-badge {
     background: #fff;
-    color: #1877f3 !important;
+    color: #667eea !important;
     border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    padding: 0.75rem 2rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.04em;
-    box-shadow: 0 2px 12px rgba(24,119,243,0.08);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
     display: inline-block;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-content h1 {
-    font-size: 5rem;
+    font-size: 5.5rem;
     font-weight: 900;
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
+    line-height: 0.85;
+    margin-bottom: 2rem;
     color: #fff;
-    letter-spacing: -2px;
+    letter-spacing: -4px;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-content h1 span {
@@ -97,16 +242,51 @@ body {
 }
 
 .hero-content .lead {
-    font-size: 1.25rem;
-    color: #eaf1fb;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
     margin-bottom: 2.5rem;
-    max-width: 400px;
+    color: rgba(255,255,255,0.9);
+    max-width: 500px;
+    position: relative;
+    z-index: 10;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 10;
+    flex-wrap: wrap;
+}
+
+.hero-buttons .btn {
+    position: relative;
+    z-index: 10;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-light {
+    background: #fff !important;
+    color: #667eea !important;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.2);
+}
+
+.hero-buttons .btn-outline-light {
+    background: transparent !important;
+    color: #fff !important;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.hero-buttons .btn-outline-light:hover {
+    background: rgba(255,255,255,0.1) !important;
+    border-color: rgba(255,255,255,0.6);
 }
 
 .hero-buttons .btn {

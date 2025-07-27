@@ -9,17 +9,21 @@ get_header(); ?>
 
 <!-- Hero Section -->
 <section id="hero" class="hero-section bg-primary text-white py-5">
+    <!-- Background geometric shapes -->
+    <div class="hero-bg-bottom-left"></div>
+    <div class="hero-bg-bottom-right"></div>
+    
     <div class="container">
         <div class="row align-items-center min-vh-100">
             <div class="col-lg-6 order-lg-1 order-2">
                 <div class="hero-content">
-                    <span class="hero-badge bg-light text-primary mb-3 d-inline-block px-3 py-2 rounded-pill fw-semibold">WE PROVIDE 100% & TRUSTABLE</span>
-                    <h1 class="display-2 fw-bold mb-4 lh-1">IT<br><span class="text-light">Solution</span></h1>
-                    <p class="lead mb-4 text-light opacity-90">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                    <span class="hero-badge bg-light text-primary mb-3 d-inline-block px-3 py-2 rounded-pill fw-semibold">WE PROVIDE 100% & TRUSTEBALE</span>
+                    <h1 class="display-1 fw-bold mb-4 lh-1">IT<br><span class="text-white">Solution</span></h1>
+                    <p class="lead mb-4 text-white opacity-90">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                     
                     <div class="hero-buttons mb-5">
-                        <a href="<?php echo home_url('/about-us'); ?>" class="btn btn-light btn-lg me-3 px-4 py-3 fw-semibold">Read More</a>
-                        <a href="https://www.youtube.com/watch?v=MLpWrANjFbI&ab_channel=eidelchteinadvogados" class="btn btn-outline-light btn-lg video-play-btn px-4 py-3" target="_blank">
+                        <a href="<?php echo home_url('/about-us'); ?>" class="btn btn-light btn-lg me-3 px-4 py-3 fw-semibold rounded-pill">Read More</a>
+                        <a href="https://www.youtube.com/watch?v=MLpWrANjFbI&ab_channel=eidelchteinadvogados" class="btn btn-outline-light btn-lg video-play-btn px-4 py-3 rounded-pill" target="_blank">
                             <i class="fas fa-play me-2"></i>Watch Video
                         </a>
                     </div>

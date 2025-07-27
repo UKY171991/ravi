@@ -13,11 +13,11 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light py-3">
             <!-- Logo -->
-            <a class="navbar-brand fw-bold fs-2 text-primary" href="<?php echo home_url(); ?>">
+            <a class="navbar-brand fw-bold fs-1 text-primary d-flex align-items-center" href="<?php echo home_url(); ?>">
                 <?php if (has_custom_logo()) : ?>
                     <?php the_custom_logo(); ?>
                 <?php else : ?>
-                    Techwix
+                    <i class="fas fa-cube me-2 text-primary"></i>Techwix
                 <?php endif; ?>
             </a>
             
