@@ -713,3 +713,490 @@ setTimeout(() => {
         }
     });
 }, 8000);
+
+// Contact Page Enhancements
+$(document).ready(function() {
+    // Multi-step form functionality
+    let currentStep = 1;
+    const totalSteps = $('.form-step').length;
+    
+    // Next step button
+    $('.next-step').on('click', function() {
+        if (validateStep(currentStep)) {
+            goToStep(currentStep + 1);
+        }
+    });
+    
+    // Previous step button
+    $('.prev-step').on('click', function() {
+        goToStep(currentStep - 1);
+    });
+    
+    function goToStep(step) {
+        if (step < 1 || step > totalSteps) return;
+        
+        // Hide current step
+        $('.form-step').removeClass('active').hide();
+        $('.step').removeClass('active');
+        
+        // Show new step
+        currentStep = step;
+        $(`.form-step[data-step="${currentStep}"]`).addClass('active').fadeIn(300);
+        $(`.step[data-step="${currentStep}"]`).addClass('active');
+        
+        updateStepIndicators();
+    }
+    
+    function updateStepIndicators() {
+        $('.step').each(function(index) {
+            const stepNumber = index + 1;
+            const circle = $(this).find('.step-circle');
+            
+            if (stepNumber < currentStep) {
+                // Completed step
+                circle.removeClass('bg-light text-muted bg-primary')
+                      .addClass('bg-success text-white')
+                      .html('<i class="fas fa-check"></i>');
+            } else if (stepNumber === currentStep) {
+                // Current step
+                circle.removeClass('bg-light text-muted bg-success')
+                      .addClass('bg-primary text-white')
+                      .text(stepNumber);
+            } else {
+                // Future step
+                circle.removeClass('bg-primary bg-success text-white')
+                      .addClass('bg-light text-muted')
+                      .text(stepNumber);
+            }
+        });
+    }
+    
+    function validateStep(step) {
+        const currentFormStep = $(`.form-step[data-step="${step}"]`);
+        const requiredFields = currentFormStep.find('[required]');
+        let isValid = true;
+        
+        requiredFields.each(function() {
+            const field = $(this);
+            if (!field.val().trim()) {
+                field.addClass('is-invalid');
+                isValid = false;
+                
+                // Show validation message
+                if (!field.next('.invalid-feedback').length) {
+                    field.after('<div class="invalid-feedback">This field is required.</div>');
+                }
+            } else {
+                field.removeClass('is-invalid');
+                field.next('.invalid-feedback').remove();
+            }
+        });
+        
+        return isValid;
+    }
+    
+    // Form field animations
+    $('.form-control, .form-select').on('focus', function() {
+        $(this).closest('.form-floating').addClass('focused');
+        $(this).parent().addClass('focused');
+    }).on('blur', function() {
+        $(this).closest('.form-floating').removeClass('focused');
+        $(this).parent().removeClass('focused');
+    });
+    
+    // Contact info card hover effects
+    $('.contact-info-card').hover(
+        function() {
+            $(this).find('.icon-wrapper').addClass('animate-pulse');
+        },
+        function() {
+            $(this).find('.icon-wrapper').removeClass('animate-pulse');
+        }
+    );
+    
+    // Phone number formatting
+    $('#contactPhone, #quotePhone').on('input', function() {
+        let value = this.value.replace(/\D/g, '');
+        let formattedValue = '';
+        
+        if (value.length > 0) {
+            if (value.length <= 3) {
+                formattedValue = `(${value}`;
+            } else if (value.length <= 6) {
+                formattedValue = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+            } else {
+                formattedValue = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+            }
+        }
+        
+        this.value = formattedValue;
+    });
+    
+    // Email validation enhancement
+    $('input[type="email"]').on('blur', function() {
+        const email = $(this).val();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (email && !emailRegex.test(email)) {
+            $(this).addClass('is-invalid');
+            if (!$(this).next('.invalid-feedback').length) {
+                $(this).after('<div class="invalid-feedback">Please enter a valid email address.</div>');
+            }
+        } else {
+            $(this).removeClass('is-invalid');
+            $(this).next('.invalid-feedback').remove();
+        }
+    });
+    
+    // Form submission with loading state
+    $('form').on('submit', function() {
+        const submitBtn = $(this).find('button[type="submit"]');
+        const originalText = submitBtn.html();
+        
+        submitBtn.prop('disabled', true)
+                 .html('<i class="fas fa-spinner fa-spin me-2"></i>Sending...');
+        
+        // Re-enable after 3 seconds (in case of error)
+        setTimeout(() => {
+            submitBtn.prop('disabled', false).html(originalText);
+        }, 3000);
+    });
+    
+    // Smooth scroll for anchor links
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        const target = $($(this).attr('href'));
+        
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 100
+            }, 600);
+        }
+    });
+    
+    // Contact method preference handling
+    $('#preferredContact').on('change', function() {
+        const preference = $(this).val();
+        const phoneField = $('#contactPhone');
+        
+        if (preference === 'Phone' || preference === 'WhatsApp') {
+            phoneField.attr('required', true);
+            phoneField.closest('.form-floating').find('label').html('<i class="fas fa-phone me-2 text-primary"></i>Phone Number *');
+        } else {
+            phoneField.removeAttr('required');
+            phoneField.closest('.form-floating').find('label').html('<i class="fas fa-phone me-2 text-primary"></i>Phone Number');
+        }
+    });
+    
+    // Auto-resize textarea
+    $('textarea').on('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    });
+    
+    // FAQ accordion enhancements
+    $('.accordion-button').on('click', function() {
+        const icon = $(this).find('i');
+        if ($(this).hasClass('collapsed')) {
+            icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+        } else {
+            icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+        }
+    });
+    
+    // Contact card click to action
+    $('.contact-info-card').on('click', function() {
+        const link = $(this).find('a').first();
+        if (link.length) {
+            window.open(link.attr('href'), '_blank');
+        }
+    });
+    
+    // Social media hover effects
+    $('.social-connect a').hover(
+        function() {
+            $(this).addClass('animate-pulse');
+        },
+        function() {
+            $(this).removeClass('animate-pulse');
+        }
+    );
+});
+
+// Live chat function (placeholder)
+function openLiveChat() {
+    // Add your live chat integration here
+    // For example: Intercom, Zendesk, Tawk.to, etc.
+    
+    // Placeholder notification
+    showNotification('Live Chat', 'Live chat feature will be available soon!', 'info');
+    
+    // Example integration:
+    // if (window.Intercom) {
+    //     window.Intercom('show');
+    // }
+}
+
+// Schedule call function (placeholder)
+function scheduleCall() {
+    // Add your scheduling integration here
+    // For example: Calendly, Acuity Scheduling, etc.
+    
+    // Placeholder - open scheduling link
+    window.open('https://calendly.com/your-link', '_blank');
+    
+    // Or show a modal with scheduling options
+    showNotification('Schedule Call', 'Opening scheduling calendar...', 'success');
+}
+
+// Notification system
+function showNotification(title, message, type = 'info') {
+    const notification = $(`
+        <div class="notification alert alert-${type === 'info' ? 'primary' : type} alert-dismissible fade show position-fixed" 
+             style="top: 20px; right: 20px; z-index: 9999; min-width: 300px;">
+            <strong>${title}</strong><br>
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    `);
+    
+    $('body').append(notification);
+    
+    // Auto-dismiss after 5 seconds
+    setTimeout(() => {
+        notification.alert('close');
+    }, 5000);
+}
+
+// Performance optimization: Lazy load images
+$(document).ready(function() {
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+});
+
+// Form analytics (placeholder)
+function trackFormSubmission(formType, step = null) {
+    // Add your analytics tracking here
+    // For example: Google Analytics, Mixpanel, etc.
+    
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submission', {
+            'form_type': formType,
+            'step': step
+        });
+    }
+    
+    console.log(`Form submission tracked: ${formType}`, step ? `Step: ${step}` : '');
+}
+
+// Enhanced form validation
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function validatePhone(phone) {
+    const re = /^\(\d{3}\) \d{3}-\d{4}$/;
+    return re.test(phone);
+}
+
+// Initialize page-specific features
+$(document).ready(function() {
+    // Add page-specific initialization
+    if ($('.contact-hero').length) {
+        // Initialize contact page features
+        initContactPageFeatures();
+    }
+});
+
+function initContactPageFeatures() {
+    // Add floating action button for quick contact
+    const fabButton = $(`
+        <div class="fab-container position-fixed" style="bottom: 30px; right: 30px; z-index: 1000;">
+            <button class="btn btn-primary rounded-circle fab-main" style="width: 60px; height: 60px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+                <i class="fas fa-phone"></i>
+            </button>
+            <div class="fab-options" style="display: none;">
+                <a href="tel:+1400630123" class="btn btn-success rounded-circle fab-option mb-2" style="width: 50px; height: 50px;">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:info@techwix-theme.com" class="btn btn-primary rounded-circle fab-option mb-2" style="width: 50px; height: 50px;">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/1400630123" class="btn btn-success rounded-circle fab-option mb-2" style="width: 50px; height: 50px;" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    `);
+    
+    $('body').append(fabButton);
+    
+    // FAB toggle functionality
+    $('.fab-main').on('click', function() {
+        $('.fab-options').toggle();
+    });
+    
+    // Hide FAB on scroll down, show on scroll up
+    let lastScrollTop = 0;
+    $(window).scroll(function() {
+        const scrollTop = $(this).scrollTop();
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            $('.fab-container').fadeOut();
+        } else {
+            $('.fab-container').fadeIn();
+        }
+        lastScrollTop = scrollTop;
+    });
+}
+
+// Blog Page Enhancements
+$(document).ready(function() {
+    // Blog page specific functionality
+    if ($('.blog-section').length) {
+        initBlogPageFeatures();
+    }
+});
+
+function initBlogPageFeatures() {
+    // Blog card hover effects with staggered animation
+    $('.blog-card').each(function(index) {
+        $(this).css('animation-delay', (index * 0.1) + 's');
+        
+        $(this).hover(
+            function() {
+                $(this).find('.blog-image img').css('transform', 'scale(1.05)');
+                $(this).find('.blog-overlay').css('opacity', '1');
+            },
+            function() {
+                $(this).find('.blog-image img').css('transform', 'scale(1)');
+                $(this).find('.blog-overlay').css('opacity', '0');
+            }
+        );
+    });
+    
+    // Lazy loading for blog images
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                    img.style.animation = 'fadeIn 0.5s ease forwards';
+                }
+            });
+        });
+        
+        document.querySelectorAll('.blog-image img').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // Blog card click tracking
+    $('.blog-card').on('click', function(e) {
+        if (!$(e.target).closest('a').length) {
+            window.location.href = $(this).find('.blog-title a').attr('href');
+        }
+    });
+    
+    // Smooth pagination scroll
+    $('.pagination .page-link').on('click', function(e) {
+        if (this.href) {
+            setTimeout(() => {
+                $('html, body').animate({
+                    scrollTop: $('.blog-section').offset().top - 120
+                }, 800);
+            }, 100);
+        }
+    });
+    
+    // Read time estimation
+    $('.blog-card').each(function() {
+        const excerpt = $(this).find('.blog-excerpt').text();
+        const wordCount = excerpt.split(' ').length;
+        const readTime = Math.ceil(wordCount / 200); // 200 words per minute
+        
+        if (wordCount > 10) { // Only add if there's substantial content
+            $(this).find('.blog-meta .d-flex').append(
+                `<span class="read-time ms-3">
+                    <i class="fas fa-clock me-1 text-primary"></i>
+                    ${readTime} min read
+                </span>`
+            );
+        }
+    });
+    
+    // Blog filter functionality (if categories exist)
+    if ($('.blog-filter').length) {
+        $('.blog-filter .filter-btn').on('click', function() {
+            const filterValue = $(this).data('filter');
+            
+            $('.blog-filter .filter-btn').removeClass('active');
+            $(this).addClass('active');
+            
+            if (filterValue === 'all') {
+                $('.blog-card').parent().fadeIn(300);
+            } else {
+                $('.blog-card').parent().hide();
+                $(`.blog-card[data-category="${filterValue}"]`).parent().fadeIn(300);
+            }
+        });
+    }
+    
+    // Blog search functionality
+    $('#blog-search').on('input', function() {
+        const searchTerm = $(this).val().toLowerCase();
+        
+        $('.blog-card').each(function() {
+            const title = $(this).find('.blog-title').text().toLowerCase();
+            const excerpt = $(this).find('.blog-excerpt').text().toLowerCase();
+            
+            if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                $(this).parent().fadeIn(300);
+            } else {
+                $(this).parent().fadeOut(300);
+            }
+        });
+    });
+    
+    // Enhanced blog card animations
+    const cards = document.querySelectorAll('.blog-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, index * 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    cards.forEach(card => {
+        if (!card.style.opacity) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+        }
+        observer.observe(card);
+    });
+}
