@@ -8,18 +8,18 @@
 get_header(); ?>
 
 <!-- Hero Section -->
-<section id="hero" class="hero-section bg-primary text-white py-5">
+<section id="hero" class="hero-section bg-primary text-white">
     <!-- Background geometric shapes -->
     <div class="hero-bg-bottom-left"></div>
     <div class="hero-bg-bottom-right"></div>
     
     <div class="container">
-        <div class="row align-items-center min-vh-100">
+        <div class="row align-items-center">
             <div class="col-lg-6 order-lg-1 order-2">
                 <div class="hero-content">
-                    <span class="hero-badge bg-light text-primary mb-3 d-inline-block px-3 py-2 rounded-pill fw-semibold">WE PROVIDE 100% & TRUSTEBALE</span>
+                    <span class="hero-badge bg-light text-primary mb-4 d-inline-block px-3 py-2 rounded-pill fw-semibold">WE PROVIDE 100% & TRUSTEBALE</span>
                     <h1 class="display-1 fw-bold mb-4 lh-1">IT<br><span class="text-white">Solution</span></h1>
-                    <p class="lead mb-4 text-white opacity-90">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
+                    <p class="lead mb-5 text-white opacity-90">We provide the most responsive and functional IT design for companies and businesses worldwide.</p>
                     
                     <div class="hero-buttons mb-5">
                         <a href="<?php echo home_url('/about-us'); ?>" class="btn btn-light btn-lg me-3 px-4 py-3 fw-semibold rounded-pill">Read More</a>
@@ -29,7 +29,7 @@ get_header(); ?>
                     </div>
                     
                     <!-- Service Tags -->
-                    <div class="hero-services mb-4">
+                    <div class="hero-services mb-5">
                         <span class="badge bg-light text-primary me-2 mb-2 px-3 py-2">Highly professional IT experts</span>
                         <span class="badge bg-light text-primary me-2 mb-2 px-3 py-2">Infrastructure Technology</span>
                         <span class="badge bg-light text-primary me-2 mb-2 px-3 py-2">Quality Control System</span>
@@ -37,12 +37,12 @@ get_header(); ?>
                     
                     <!-- Progress Bars -->
                     <div class="progress-bars">
-                        <div class="progress-item mb-3">
+                        <div class="progress-item mb-4">
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="fw-semibold">IT Management</span>
                                 <span class="fw-bold">80%</span>
                             </div>
-                            <div class="progress bg-light bg-opacity-20" style="height: 6px;">
+                            <div class="progress bg-light bg-opacity-20" style="height: 8px;">
                                 <div class="progress-bar bg-light" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
@@ -51,14 +51,14 @@ get_header(); ?>
                                 <span class="fw-semibold">Data Security</span>
                                 <span class="fw-bold">95%</span>
                             </div>
-                            <div class="progress bg-light bg-opacity-20" style="height: 6px;">
+                            <div class="progress bg-light bg-opacity-20" style="height: 8px;">
                                 <div class="progress-bar bg-light" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 order-lg-2 order-1 mb-4 mb-lg-0">
+            <div class="col-lg-6 order-lg-2 order-1 mb-5 mb-lg-0">
                 <div class="hero-image text-center position-relative">
                     <div class="hero-img-wrapper position-relative d-inline-block">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/TECW0137.png" 
@@ -73,12 +73,12 @@ get_header(); ?>
 </section>
 
 <!-- Services Section -->
-<section id="services" class="services-section py-5 bg-light">
+<section id="services" class="services-section bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
-                <span class="text-primary fw-bold text-uppercase tracking-wide">OUR SERVICES</span>
-                <h2 class="section-title fw-bold mb-3 display-5">We Provide Truly Prominent IT Solutions.</h2>
+                <span class="text-primary fw-bold text-uppercase tracking-wide mb-3 d-block">OUR SERVICES</span>
+                <h2 class="section-title fw-bold display-5">We Provide Truly Prominent IT Solutions.</h2>
                 <p class="section-subtitle text-muted">Professional IT solutions designed to help your business grow and succeed in the digital age</p>
             </div>
         </div>
@@ -160,16 +160,16 @@ get_header(); ?>
 </section>
 
 <!-- About Section -->
-<section id="about" class="about-section py-5">
+<section id="about" class="about-section">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <div class="about-content pe-lg-4">
-                    <span class="text-primary fw-bold text-uppercase tracking-wide">ABOUT TECHWIX</span>
-                    <h2 class="fw-bold mb-4 display-5">We Provide Truly Prominent IT Solutions.</h2>
-                    <p class="mb-4 text-muted">Techwix offers comprehensive IT solutions designed to help your business grow and succeed in the digital age. Our expert team provides innovative technology services tailored to your specific needs.</p>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="about-content">
+                    <span class="text-primary fw-bold text-uppercase tracking-wide mb-3 d-block">ABOUT TECHWIX</span>
+                    <h2 class="section-title fw-bold display-5">We Provide Truly Prominent IT Solutions.</h2>
+                    <p class="mb-4 text-muted fs-5">Techwix offers comprehensive IT solutions designed to help your business grow and succeed in the digital age. Our expert team provides innovative technology services tailored to your specific needs.</p>
                     
-                    <div class="row mb-4">
+                    <div class="row mb-5">
                         <div class="col-md-6 mb-3">
                             <div class="d-flex align-items-center">
                                 <div class="feature-icon me-3">
@@ -210,7 +210,7 @@ get_header(); ?>
             <div class="col-lg-6">
                 <div class="about-image position-relative">
                     <div class="image-wrapper">
-                        <img src="https://picsum.photos/500/400?random=1" 
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/about-hero.jpg" 
                              alt="About Techwix" class="img-fluid rounded-4 shadow-lg w-100" 
                              style="object-fit: cover;">
                         <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-10 rounded-4"></div>
@@ -222,7 +222,7 @@ get_header(); ?>
 </section>
 
 <!-- Counter Section -->
-<section class="counter-section py-5 bg-light">
+<section class="counter-section bg-light">
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-3 col-md-6">
@@ -274,7 +274,7 @@ get_header(); ?>
 </section>
 
 <!-- Why Choose Us Section -->
-<section class="why-choose-section py-5">
+<section class="why-choose-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -355,7 +355,7 @@ get_header(); ?>
 </section>
 
 <!-- Testimonials Section -->
-<section class="testimonials-section py-5 bg-dark text-white">
+<section class="testimonials-section bg-dark text-white">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -378,7 +378,7 @@ get_header(); ?>
                                             <p class="mb-0 text-light h5 fw-normal lh-base">"Accelerate innovation with world-class tech teams Beyond more stoic this along goodness hey this this wow manatee."</p>
                                         </div>
                                         <div class="testimonial-author d-flex align-items-center">
-                                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" 
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/avatar-1.jpg" 
                                                  alt="James Smith" class="rounded-circle me-3 flex-shrink-0" width="60" height="60"
                                                  style="object-fit: cover;">
                                             <div>
@@ -397,7 +397,7 @@ get_header(); ?>
                                             <p class="mb-0 text-light h5 fw-normal lh-base">"I believe in lifelong learning and they are a great place to learn from experts. I have learned a lot and recommend it."</p>
                                         </div>
                                         <div class="testimonial-author d-flex align-items-center">
-                                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=150&h=150&fit=crop&crop=face" 
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/avatar-2.jpg" 
                                                  alt="Monica Blews" class="rounded-circle me-3 flex-shrink-0" width="60" height="60"
                                                  style="object-fit: cover;">
                                             <div>
@@ -420,7 +420,7 @@ get_header(); ?>
                                             <p class="mb-0 text-light h5 fw-normal lh-base">"The team at Techwix is amazing. They delivered our project on time and exceeded our expectations. Great communication throughout."</p>
                                         </div>
                                         <div class="testimonial-author d-flex align-items-center">
-                                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" 
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/avatar-3.jpg" 
                                                  alt="Mike Wilson" class="rounded-circle me-3 flex-shrink-0" width="60" height="60"
                                                  style="object-fit: cover;">
                                             <div>
@@ -439,7 +439,7 @@ get_header(); ?>
                                             <p class="mb-0 text-light h5 fw-normal lh-base">"Professional, reliable, and innovative. Techwix has been our trusted IT partner for years. Their expertise is unmatched."</p>
                                         </div>
                                         <div class="testimonial-author d-flex align-items-center">
-                                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" 
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/avatar-4.jpg" 
                                                  alt="Emma Davis" class="rounded-circle me-3 flex-shrink-0" width="60" height="60"
                                                  style="object-fit: cover;">
                                             <div>
@@ -465,7 +465,7 @@ get_header(); ?>
 </section>
 
 <!-- Portfolio Section -->
-<section class="portfolio-section py-5">
+<section class="portfolio-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -491,7 +491,7 @@ get_header(); ?>
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 portfolio-item" data-category="web-development">
                 <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
-                    <img src="https://picsum.photos/400/300?random=20" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-1.jpg" 
                          alt="E-commerce Platform" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
                     <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
                         <div class="text-center text-white">
@@ -505,7 +505,7 @@ get_header(); ?>
             
             <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile-app">
                 <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
-                    <img src="https://picsum.photos/400/300?random=21" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-2.jpg" 
                          alt="Healthcare Mobile App" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
                     <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
                         <div class="text-center text-white">
@@ -519,7 +519,7 @@ get_header(); ?>
             
             <div class="col-lg-4 col-md-6 portfolio-item" data-category="infrastructure">
                 <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
-                    <img src="https://picsum.photos/400/300?random=22" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-3.jpg" 
                          alt="Cloud Infrastructure" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
                     <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
                         <div class="text-center text-white">
@@ -533,7 +533,7 @@ get_header(); ?>
             
             <div class="col-lg-4 col-md-6 portfolio-item" data-category="web-development">
                 <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
-                    <img src="https://picsum.photos/400/300?random=23" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-4.jpg" 
                          alt="Corporate Website" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
                     <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
                         <div class="text-center text-white">
@@ -547,7 +547,7 @@ get_header(); ?>
             
             <div class="col-lg-4 col-md-6 portfolio-item" data-category="security">
                 <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
-                    <img src="https://picsum.photos/400/300?random=24" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-5.jpg" 
                          alt="Security System" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
                     <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
                         <div class="text-center text-white">
@@ -561,7 +561,7 @@ get_header(); ?>
             
             <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile-app">
                 <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
-                    <img src="https://picsum.photos/400/300?random=25" 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/portfolio-6.jpg" 
                          alt="Finance App" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
                     <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
                         <div class="text-center text-white">
@@ -583,7 +583,7 @@ get_header(); ?>
 </section>
 
 <!-- Pricing Section -->
-<section class="pricing-section py-5 bg-light">
+<section class="pricing-section bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -653,7 +653,7 @@ get_header(); ?>
 </section>
 
 <!-- Team Section -->
-<section class="team-section py-5">
+<section class="team-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -732,7 +732,7 @@ get_header(); ?>
 </section>
 
 <!-- Process Section -->
-<section class="process-section py-5 bg-light">
+<section class="process-section bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -795,7 +795,7 @@ get_header(); ?>
 </section>
 
 <!-- Blog Section -->
-<section class="blog-section py-5">
+<section class="blog-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -808,7 +808,7 @@ get_header(); ?>
             <div class="col-lg-4 col-md-6">
                 <article class="blog-card bg-white rounded-4 shadow-sm border-0 overflow-hidden h-100">
                     <div class="blog-image">
-                        <img src="https://picsum.photos/400/250?random=10" 
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-1.jpg" 
                              alt="Future of AI" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                     </div>
                     <div class="blog-content p-4">
@@ -831,7 +831,7 @@ get_header(); ?>
             <div class="col-lg-4 col-md-6">
                 <article class="blog-card bg-white rounded-4 shadow-sm border-0 overflow-hidden h-100">
                     <div class="blog-image">
-                        <img src="https://picsum.photos/400/250?random=11" 
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-2.jpg" 
                              alt="Cybersecurity" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                     </div>
                     <div class="blog-content p-4">
@@ -854,7 +854,7 @@ get_header(); ?>
             <div class="col-lg-4 col-md-6">
                 <article class="blog-card bg-white rounded-4 shadow-sm border-0 overflow-hidden h-100">
                     <div class="blog-image">
-                        <img src="https://picsum.photos/400/250?random=12" 
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog-3.jpg" 
                              alt="Cloud Computing" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
                     </div>
                     <div class="blog-content p-4">
@@ -884,7 +884,7 @@ get_header(); ?>
 </section>
 
 <!-- FAQ Section -->
-<section class="faq-section py-5 bg-light">
+<section class="faq-section bg-light">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -967,7 +967,7 @@ get_header(); ?>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="contact-section py-5 bg-primary text-white">
+<section id="contact" class="contact-section bg-primary text-white">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center mb-5">
@@ -1080,7 +1080,7 @@ get_header(); ?>
 </section>
 
 <!-- Call to Action Section -->
-<section class="cta-section py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+<section class="cta-section position-relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
     <div class="container position-relative">
         <div class="row align-items-center">
             <div class="col-lg-8 text-center text-lg-start">
@@ -1109,7 +1109,7 @@ get_header(); ?>
 </section>
 
 <!-- Newsletter Section -->
-<section class="newsletter-section py-5">
+<section class="newsletter-section">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 mb-4 mb-lg-0">

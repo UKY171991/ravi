@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Placeholder Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .image-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+        .image-item { text-align: center; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+        .image-item img { max-width: 100%; height: auto; border-radius: 4px; }
+        canvas { border: 1px solid #ccc; margin: 5px 0; }
+        button { background: #667eea; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin: 5px; }
+        button:hover { background: #5a67d8; }
+    </style>
+</head>
+<body>
+    <h1>Generate Missing Images for Techwix Theme</h1>
+    <p>Click the buttons below to generate and download the missing images:</p>
+    
+    <div id="images">
+        <!-- Images will be generated here -->
+    </div>
+    
+    <script>
+        // Function to create a placeholder image
+        function createPlaceholderImage(width, height, text, filename, bgColor = '#667eea', textColor = '#ffffff') {
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            
+            // Fill background
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, width, height);
+            
+            // Add text
+            ctx.fillStyle = textColor;
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, width/2, height/2 - 20);
+            
+            // Add dimensions
+            ctx.font = '16px Arial';
+            ctx.fillText(`${width}x${height}`, width/2, height/2 + 20);
+            
+            return canvas;
+        }
+        
+        // Function to download canvas as image
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate all needed images
+        const images = [
+            // About section image
+            { width: 500, height: 400, text: 'About Us', filename: 'about-hero.jpg', bgColor: '#f8f9fa', textColor: '#333' },
+            
+            // Portfolio images
+            { width: 400, height: 300, text: 'E-commerce Platform', filename: 'portfolio-1.jpg' },
+            { width: 400, height: 300, text: 'Healthcare App', filename: 'portfolio-2.jpg' },
+            { width: 400, height: 300, text: 'Cloud Infrastructure', filename: 'portfolio-3.jpg' },
+            { width: 400, height: 300, text: 'Corporate Website', filename: 'portfolio-4.jpg' },
+            { width: 400, height: 300, text: 'Security System', filename: 'portfolio-5.jpg' },
+            { width: 400, height: 300, text: 'Finance App', filename: 'portfolio-6.jpg' },
+            
+            // Blog images
+            { width: 400, height: 250, text: 'AI in Business', filename: 'blog-1.jpg', bgColor: '#4f46e5' },
+            { width: 400, height: 250, text: 'Cybersecurity', filename: 'blog-2.jpg', bgColor: '#059669' },
+            { width: 400, height: 250, text: 'Cloud Computing', filename: 'blog-3.jpg', bgColor: '#dc2626' },
+            
+            // Testimonial avatars
+            { width: 150, height: 150, text: 'JS', filename: 'avatar-1.jpg', bgColor: '#3b82f6' },
+            { width: 150, height: 150, text: 'MB', filename: 'avatar-2.jpg', bgColor: '#ef4444' },
+            { width: 150, height: 150, text: 'MW', filename: 'avatar-3.jpg', bgColor: '#10b981' },
+            { width: 150, height: 150, text: 'ED', filename: 'avatar-4.jpg', bgColor: '#f59e0b' }
+        ];
+        
+        const container = document.getElementById('images');
+        
+        images.forEach(img => {
+            const div = document.createElement('div');
+            div.className = 'image-item';
+            
+            const canvas = createPlaceholderImage(img.width, img.height, img.text, img.filename, img.bgColor, img.textColor);
+            
+            const button = document.createElement('button');
+            button.textContent = `Download ${img.filename}`;
+            button.onclick = () => downloadCanvas(canvas, img.filename);
+            
+            const title = document.createElement('h3');
+            title.textContent = img.filename;
+            
+            div.appendChild(title);
+            div.appendChild(canvas);
+            div.appendChild(document.createElement('br'));
+            div.appendChild(button);
+            
+            container.appendChild(div);
+        });
+        
+        // Add download all button
+        const downloadAllBtn = document.createElement('button');
+        downloadAllBtn.textContent = 'Download All Images';
+        downloadAllBtn.style.background = '#059669';
+        downloadAllBtn.style.fontSize = '18px';
+        downloadAllBtn.style.padding = '15px 30px';
+        downloadAllBtn.onclick = () => {
+            images.forEach(img => {
+                const canvas = createPlaceholderImage(img.width, img.height, img.text, img.filename, img.bgColor, img.textColor);
+                setTimeout(() => downloadCanvas(canvas, img.filename), Math.random() * 1000);
+            });
+        };
+        
+        container.insertBefore(downloadAllBtn, container.firstChild);
+    </script>
+</body>
+</html>

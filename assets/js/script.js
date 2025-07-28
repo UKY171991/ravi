@@ -619,6 +619,76 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // Image Loading Error Handling
+    $('img').on('error', function() {
+        var $this = $(this);
+        var altText = $this.attr('alt') || 'Image not found';
+        
+        // Create placeholder
+        var placeholder = '<div class="image-placeholder d-flex align-items-center justify-content-center text-center p-4 bg-light rounded" style="width:' + ($this.attr('width') || '100%') + '; height:' + ($this.attr('height') || '200px') + ';">' +
+            '<div>' +
+                '<i class="fas fa-image fa-2x text-muted mb-2"></i><br>' +
+                '<small class="text-muted">' + altText + '</small>' +
+            '</div>' +
+        '</div>';
+        
+        $this.replaceWith(placeholder);
+    });
+    
+    // Image Loading State
+    $('img').on('load', function() {
+        $(this).removeClass('image-loading');
+    }).each(function() {
+        if (this.complete) {
+            $(this).removeClass('image-loading');
+        } else {
+            $(this).addClass('image-loading');
+        }
+    });
+    
+    // Lazy Loading for Better Performance
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    const src = img.dataset.src || img.src;
+                    
+                    if (src && img.src !== src) {
+                        img.src = src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // FontAwesome fallback check
+    function checkFontAwesome() {
+        const testIcon = $('<i class="fas fa-check" style="position:absolute;top:-9999px;"></i>');
+        $('body').append(testIcon);
+        
+        if (testIcon.width() === 0) {
+            console.warn('FontAwesome not loaded properly. Loading fallback...');
+            // Add fallback FontAwesome CDN
+            $('<link>').attr({
+                rel: 'stylesheet',
+                type: 'text/css',
+                href: 'https://use.fontawesome.com/releases/v6.0.0/css/all.css'
+            }).appendTo('head');
+        }
+        
+        testIcon.remove();
+    }
+    
+    // Check FontAwesome after a delay
+    setTimeout(checkFontAwesome, 1000);
+    
     // Close mobile menu when clicking on links
     const mobileNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
     mobileNavLinks.forEach(link => {

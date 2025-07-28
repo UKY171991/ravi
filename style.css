@@ -1299,6 +1299,466 @@ section {
     background: var(--bg-light);
 }
 
+/* ========================================
+   SECTION SPACING SYSTEM
+======================================== */
+/* Default section spacing */
+section {
+    position: relative;
+}
+
+/* Hero section - full height with proper spacing */
+.hero-section {
+    padding: 120px 0 100px 0 !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Main content sections - increased spacing for better breathing room */
+.services-section,
+.about-section,
+.counter-section,
+.why-choose-section,
+.testimonials-section,
+.team-section,
+.process-section,
+.blog-section,
+.faq-section,
+.portfolio-section,
+.pricing-section {
+    padding: 100px 0 !important;
+}
+
+/* Contact and CTA sections - special spacing */
+.contact-section,
+.cta-section {
+    padding: 80px 0 !important;
+}
+
+/* Newsletter section - smaller spacing */
+.newsletter-section {
+    padding: 60px 0 !important;
+}
+
+/* Section headers - consistent spacing */
+.section-title {
+    margin-bottom: 1.5rem !important;
+}
+
+.section-subtitle {
+    margin-bottom: 3rem !important;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Text sections with badges */
+.text-primary.fw-bold.text-uppercase {
+    margin-bottom: 1rem !important;
+    display: block;
+}
+
+/* Container spacing within sections */
+.services-section .container,
+.about-section .container,
+.counter-section .container,
+.why-choose-section .container,
+.testimonials-section .container,
+.team-section .container,
+.process-section .container,
+.blog-section .container,
+.faq-section .container,
+.portfolio-section .container,
+.pricing-section .container {
+    position: relative;
+}
+
+/* Card and item spacing */
+.service-card,
+.feature-item,
+.team-card,
+.blog-card,
+.portfolio-card,
+.pricing-card {
+    margin-bottom: 2rem;
+}
+
+/* Row spacing improvements */
+.row.g-4 {
+    margin-bottom: 2rem;
+}
+
+.row.g-5 {
+    margin-bottom: 3rem;
+}
+
+/* ========================================
+   RESPONSIVE SECTION SPACING
+======================================== */
+@media (max-width: 991px) {
+    .hero-section {
+        padding: 100px 0 80px 0 !important;
+        min-height: auto;
+    }
+    
+    .services-section,
+    .about-section,
+    .counter-section,
+    .why-choose-section,
+    .testimonials-section,
+    .team-section,
+    .process-section,
+    .blog-section,
+    .faq-section,
+    .portfolio-section,
+    .pricing-section {
+        padding: 80px 0 !important;
+    }
+    
+    .contact-section,
+    .cta-section {
+        padding: 60px 0 !important;
+    }
+    
+    .newsletter-section {
+        padding: 50px 0 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 80px 0 60px 0 !important;
+    }
+    
+    .services-section,
+    .about-section,
+    .counter-section,
+    .why-choose-section,
+    .testimonials-section,
+    .team-section,
+    .process-section,
+    .blog-section,
+    .faq-section,
+    .portfolio-section,
+    .pricing-section {
+        padding: 60px 0 !important;
+    }
+    
+    .contact-section,
+    .cta-section {
+        padding: 50px 0 !important;
+    }
+    
+    .newsletter-section {
+        padding: 40px 0 !important;
+    }
+    
+    .section-title {
+        font-size: 2rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .section-subtitle {
+        margin-bottom: 2rem !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* ========================================
+   SPECIFIC SECTION ADJUSTMENTS
+======================================== */
+/* Hero section internal spacing */
+.hero-content {
+    padding-right: 2rem;
+}
+
+.hero-image {
+    padding-left: 2rem;
+}
+
+@media (max-width: 991px) {
+    .hero-content,
+    .hero-image {
+        padding: 0;
+        text-align: center;
+    }
+    
+    .hero-content {
+        margin-bottom: 3rem;
+    }
+}
+
+/* About section spacing */
+.about-content {
+    padding-right: 2rem;
+}
+
+.about-image {
+    padding-left: 2rem;
+}
+
+@media (max-width: 991px) {
+    .about-content,
+    .about-image {
+        padding: 0;
+    }
+    
+    .about-content {
+        margin-bottom: 3rem;
+    }
+}
+
+/* Counter section items */
+.counter-item {
+    margin-bottom: 2rem;
+}
+
+/* Testimonial carousel spacing */
+.testimonial-card {
+    margin-bottom: 1rem;
+}
+
+/* Portfolio filter spacing */
+.portfolio-filter {
+    margin-bottom: 3rem;
+}
+
+/* FAQ accordion spacing */
+.accordion-item {
+    margin-bottom: 1rem !important;
+}
+
+/* Contact section grid spacing */
+.contact-info .contact-item {
+    margin-bottom: 2rem;
+}
+
+/* CTA section content spacing */
+.cta-section .row {
+    align-items: center;
+    min-height: 200px;
+}
+
+/* ========================================
+   SECTION SEPARATORS AND VISUAL BREAKS
+======================================== */
+/* Subtle separators between sections */
+.services-section,
+.counter-section,
+.portfolio-section,
+.pricing-section,
+.process-section,
+.faq-section {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Background alternation for better visual separation */
+.services-section,
+.counter-section,
+.pricing-section,
+.process-section,
+.faq-section {
+    background-color: #f8f9fa !important;
+}
+
+.about-section,
+.why-choose-section,
+.testimonials-section,
+.team-section,
+.blog-section,
+.portfolio-section {
+    background-color: #ffffff !important;
+}
+
+/* Special background for dark sections */
+.testimonials-section {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%) !important;
+}
+
+/* ========================================
+   ICON AND IMAGE FALLBACKS
+======================================== */
+/* Ensure FontAwesome loads properly */
+i[class*="fa-"]:before {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+    font-weight: 900;
+}
+
+i[class*="fab"]:before {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+}
+
+/* Image fallbacks for missing images */
+img {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+}
+
+img[alt]:after {
+    content: attr(alt);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #6c757d;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+}
+
+img:not([src]), img[src=""], img:invalid {
+    position: relative;
+    background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%), 
+                linear-gradient(-45deg, #f8f9fa 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f8f9fa 75%), 
+                linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+img:not([src]):after, img[src=""]:after, img:invalid:after {
+    display: block !important;
+}
+
+/* Loading state for images */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+    opacity: 0.5;
+}
+
+/* Icon sizing consistency */
+.fas, .fab, .far {
+    line-height: 1;
+    vertical-align: baseline;
+}
+
+/* Service card icons */
+.service-card .icon-wrapper {
+    background: rgba(102, 126, 234, 0.1) !important;
+}
+
+.service-card .icon-wrapper i {
+    color: var(--primary-color) !important;
+}
+
+/* Team social icons */
+.team-social a i {
+    transition: transform 0.3s ease;
+}
+
+.team-social a:hover i {
+    transform: scale(1.2);
+}
+
+/* Portfolio overlay icons */
+.portfolio-overlay {
+    backdrop-filter: blur(2px);
+}
+
+/* Blog meta icons */
+.blog-meta i {
+    opacity: 0.8;
+}
+
+/* Contact form icons */
+.contact-section i {
+    margin-right: 0.5rem;
+}
+
+/* Footer social icons */
+.footer-section .fab {
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.footer-section a:hover .fab {
+    transform: translateY(-2px);
+}
+
+/* Hero section play button */
+.video-play-btn i {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Progress bars icons */
+.progress-bars {
+    margin-top: 2rem;
+}
+
+/* Counter section icons */
+.counter-icon {
+    margin-bottom: 1rem;
+}
+
+.counter-icon i {
+    font-size: 2.5rem !important;
+}
+
+/* ========================================
+   RESPONSIVE IMAGE FIXES
+======================================== */
+@media (max-width: 768px) {
+    .hero-img-wrapper img {
+        max-width: 300px !important;
+    }
+    
+    .team-image img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    .testimonial-author img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+    
+    .process-step .icon-wrapper {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .process-step .icon-wrapper i {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* ========================================
+   LOADING STATES
+======================================== */
+.image-loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
 ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
     border-radius: 4px;
