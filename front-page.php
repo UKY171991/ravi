@@ -464,6 +464,124 @@ get_header(); ?>
     </div>
 </section>
 
+<!-- Portfolio Section -->
+<section class="portfolio-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <span class="text-primary fw-bold text-uppercase tracking-wide">PORTFOLIO</span>
+                <h2 class="section-title fw-bold mb-3 display-5">Our Recent Projects</h2>
+                <p class="section-subtitle text-muted">Showcasing successful IT solutions delivered to our clients worldwide</p>
+            </div>
+        </div>
+        
+        <!-- Portfolio Filter -->
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <div class="portfolio-filter">
+                    <button class="btn btn-outline-primary me-2 mb-2 active" data-filter="all">All Projects</button>
+                    <button class="btn btn-outline-primary me-2 mb-2" data-filter="web-development">Web Development</button>
+                    <button class="btn btn-outline-primary me-2 mb-2" data-filter="mobile-app">Mobile Apps</button>
+                    <button class="btn btn-outline-primary me-2 mb-2" data-filter="infrastructure">Infrastructure</button>
+                    <button class="btn btn-outline-primary me-2 mb-2" data-filter="security">Security</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="web-development">
+                <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=20" 
+                         alt="E-commerce Platform" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
+                        <div class="text-center text-white">
+                            <h5 class="fw-bold mb-2">E-commerce Platform</h5>
+                            <p class="mb-3">Complete online shopping solution with payment integration</p>
+                            <a href="#" class="btn btn-light rounded-pill px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile-app">
+                <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=21" 
+                         alt="Healthcare Mobile App" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
+                        <div class="text-center text-white">
+                            <h5 class="fw-bold mb-2">Healthcare Mobile App</h5>
+                            <p class="mb-3">Comprehensive health management mobile application</p>
+                            <a href="#" class="btn btn-light rounded-pill px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="infrastructure">
+                <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=22" 
+                         alt="Cloud Infrastructure" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
+                        <div class="text-center text-white">
+                            <h5 class="fw-bold mb-2">Cloud Infrastructure Setup</h5>
+                            <p class="mb-3">Scalable cloud infrastructure for enterprise client</p>
+                            <a href="#" class="btn btn-light rounded-pill px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="web-development">
+                <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=23" 
+                         alt="Corporate Website" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
+                        <div class="text-center text-white">
+                            <h5 class="fw-bold mb-2">Corporate Website</h5>
+                            <p class="mb-3">Modern responsive website for financial services</p>
+                            <a href="#" class="btn btn-light rounded-pill px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="security">
+                <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=24" 
+                         alt="Security System" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
+                        <div class="text-center text-white">
+                            <h5 class="fw-bold mb-2">Cybersecurity Implementation</h5>
+                            <p class="mb-3">Complete security overhaul for manufacturing company</p>
+                            <a href="#" class="btn btn-light rounded-pill px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 portfolio-item" data-category="mobile-app">
+                <div class="portfolio-card position-relative overflow-hidden rounded-4 shadow-sm">
+                    <img src="https://picsum.photos/400/300?random=25" 
+                         alt="Finance App" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                    <div class="portfolio-overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-90 d-flex align-items-center justify-content-center opacity-0 transition-all">
+                        <div class="text-center text-white">
+                            <h5 class="fw-bold mb-2">Personal Finance App</h5>
+                            <p class="mb-3">Smart budgeting and expense tracking mobile app</p>
+                            <a href="#" class="btn btn-light rounded-pill px-4">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <a href="#" class="btn btn-primary btn-lg rounded-pill px-5">View All Projects</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Pricing Section -->
 <section class="pricing-section py-5 bg-light">
     <div class="container">
@@ -528,6 +646,320 @@ get_header(); ?>
                         <li class="mb-3 text-muted">Custom Domains</li>
                     </ul>
                     <a href="#" class="btn btn-primary rounded-pill px-5 py-3 fw-semibold">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <span class="text-primary fw-bold text-uppercase tracking-wide">OUR TEAM</span>
+                <h2 class="section-title fw-bold mb-3 display-5">Meet Our Expert Team</h2>
+                <p class="section-subtitle text-muted">Highly professional IT experts and dedicated technology team members for your business success</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card text-center bg-white rounded-4 shadow-sm border-0 p-4 h-100">
+                    <div class="team-image mb-4">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team-1.jpg" 
+                             alt="John Smith" class="img-fluid rounded-circle mx-auto d-block" 
+                             style="width: 120px; height: 120px; object-fit: cover;">
+                    </div>
+                    <h5 class="fw-bold mb-2">John Smith</h5>
+                    <p class="text-primary mb-3">CEO & Founder</p>
+                    <div class="team-social">
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card text-center bg-white rounded-4 shadow-sm border-0 p-4 h-100">
+                    <div class="team-image mb-4">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team-2.jpg" 
+                             alt="Sarah Johnson" class="img-fluid rounded-circle mx-auto d-block" 
+                             style="width: 120px; height: 120px; object-fit: cover;">
+                    </div>
+                    <h5 class="fw-bold mb-2">Sarah Johnson</h5>
+                    <p class="text-primary mb-3">CTO</p>
+                    <div class="team-social">
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card text-center bg-white rounded-4 shadow-sm border-0 p-4 h-100">
+                    <div class="team-image mb-4">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team-3.jpg" 
+                             alt="Mike Wilson" class="img-fluid rounded-circle mx-auto d-block" 
+                             style="width: 120px; height: 120px; object-fit: cover;">
+                    </div>
+                    <h5 class="fw-bold mb-2">Mike Wilson</h5>
+                    <p class="text-primary mb-3">Lead Developer</p>
+                    <div class="team-social">
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="team-card text-center bg-white rounded-4 shadow-sm border-0 p-4 h-100">
+                    <div class="team-image mb-4">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team-4.jpg" 
+                             alt="Emma Davis" class="img-fluid rounded-circle mx-auto d-block" 
+                             style="width: 120px; height: 120px; object-fit: cover;">
+                    </div>
+                    <h5 class="fw-bold mb-2">Emma Davis</h5>
+                    <p class="text-primary mb-3">Project Manager</p>
+                    <div class="team-social">
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted me-2 hover-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Process Section -->
+<section class="process-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <span class="text-primary fw-bold text-uppercase tracking-wide">OUR PROCESS</span>
+                <h2 class="section-title fw-bold mb-3 display-5">How We Work</h2>
+                <p class="section-subtitle text-muted">Our proven methodology to deliver exceptional IT solutions</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step text-center position-relative">
+                    <div class="process-icon mb-4">
+                        <div class="icon-wrapper bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center position-relative" style="width: 80px; height: 80px;">
+                            <i class="fas fa-lightbulb fa-2x"></i>
+                            <span class="step-number position-absolute top-0 start-100 translate-middle bg-white text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 30px; height: 30px; font-size: 14px;">1</span>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold mb-3">Research & Analysis</h5>
+                    <p class="text-muted">We analyze your business requirements and market needs to create the perfect strategy.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step text-center position-relative">
+                    <div class="process-icon mb-4">
+                        <div class="icon-wrapper bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center position-relative" style="width: 80px; height: 80px;">
+                            <i class="fas fa-drafting-compass fa-2x"></i>
+                            <span class="step-number position-absolute top-0 start-100 translate-middle bg-white text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 30px; height: 30px; font-size: 14px;">2</span>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold mb-3">Design & Planning</h5>
+                    <p class="text-muted">Creating detailed design and comprehensive project planning for optimal results.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step text-center position-relative">
+                    <div class="process-icon mb-4">
+                        <div class="icon-wrapper bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center position-relative" style="width: 80px; height: 80px;">
+                            <i class="fas fa-code fa-2x"></i>
+                            <span class="step-number position-absolute top-0 start-100 translate-middle bg-white text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 30px; height: 30px; font-size: 14px;">3</span>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold mb-3">Development</h5>
+                    <p class="text-muted">Expert development using cutting-edge technologies and best practices.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="process-step text-center position-relative">
+                    <div class="process-icon mb-4">
+                        <div class="icon-wrapper bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center position-relative" style="width: 80px; height: 80px;">
+                            <i class="fas fa-rocket fa-2x"></i>
+                            <span class="step-number position-absolute top-0 start-100 translate-middle bg-white text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 30px; height: 30px; font-size: 14px;">4</span>
+                        </div>
+                    </div>
+                    <h5 class="fw-bold mb-3">Launch & Support</h5>
+                    <p class="text-muted">Successful deployment with ongoing support and maintenance services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section class="blog-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <span class="text-primary fw-bold text-uppercase tracking-wide">LATEST NEWS</span>
+                <h2 class="section-title fw-bold mb-3 display-5">Recent Blog Posts</h2>
+                <p class="section-subtitle text-muted">Stay updated with our latest insights and industry trends</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <article class="blog-card bg-white rounded-4 shadow-sm border-0 overflow-hidden h-100">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/400/250?random=10" 
+                             alt="Future of AI" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="blog-content p-4">
+                        <div class="blog-meta mb-3">
+                            <span class="text-muted small">
+                                <i class="fas fa-calendar-alt me-1"></i>January 15, 2025
+                            </span>
+                            <span class="text-muted small ms-3">
+                                <i class="fas fa-user me-1"></i>John Smith
+                            </span>
+                        </div>
+                        <h5 class="fw-bold mb-3">
+                            <a href="#" class="text-dark text-decoration-none hover-primary">The Future of Artificial Intelligence in Business</a>
+                        </h5>
+                        <p class="text-muted mb-3">Discover how AI is transforming business operations and creating new opportunities for growth...</p>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <article class="blog-card bg-white rounded-4 shadow-sm border-0 overflow-hidden h-100">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/400/250?random=11" 
+                             alt="Cybersecurity" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="blog-content p-4">
+                        <div class="blog-meta mb-3">
+                            <span class="text-muted small">
+                                <i class="fas fa-calendar-alt me-1"></i>January 12, 2025
+                            </span>
+                            <span class="text-muted small ms-3">
+                                <i class="fas fa-user me-1"></i>Sarah Johnson
+                            </span>
+                        </div>
+                        <h5 class="fw-bold mb-3">
+                            <a href="#" class="text-dark text-decoration-none hover-primary">Essential Cybersecurity Practices for Modern Businesses</a>
+                        </h5>
+                        <p class="text-muted mb-3">Learn about the most important cybersecurity measures every business should implement...</p>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <article class="blog-card bg-white rounded-4 shadow-sm border-0 overflow-hidden h-100">
+                    <div class="blog-image">
+                        <img src="https://picsum.photos/400/250?random=12" 
+                             alt="Cloud Computing" class="img-fluid w-100" style="height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="blog-content p-4">
+                        <div class="blog-meta mb-3">
+                            <span class="text-muted small">
+                                <i class="fas fa-calendar-alt me-1"></i>January 10, 2025
+                            </span>
+                            <span class="text-muted small ms-3">
+                                <i class="fas fa-user me-1"></i>Mike Wilson
+                            </span>
+                        </div>
+                        <h5 class="fw-bold mb-3">
+                            <a href="#" class="text-dark text-decoration-none hover-primary">Cloud Computing: Benefits and Best Practices</a>
+                        </h5>
+                        <p class="text-muted mb-3">Explore the advantages of cloud computing and how to implement it effectively...</p>
+                        <a href="#" class="btn btn-outline-primary rounded-pill px-4">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <a href="<?php echo home_url('/blog'); ?>" class="btn btn-primary btn-lg rounded-pill px-5">View All Posts</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center mb-5">
+                <span class="text-primary fw-bold text-uppercase tracking-wide">FAQ</span>
+                <h2 class="section-title fw-bold mb-3 display-5">Frequently Asked Questions</h2>
+                <p class="section-subtitle text-muted">Find answers to common questions about our IT solutions and services</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 mb-3 rounded-4 shadow-sm">
+                        <h2 class="accordion-header" id="faq1">
+                            <button class="accordion-button fw-semibold rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                What IT services do you provide?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                We provide comprehensive IT solutions including infrastructure technology, blockchain development, advanced technology solutions, data management, security management, and dedicated IT support services.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 rounded-4 shadow-sm">
+                        <h2 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed fw-semibold rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                How experienced is your team?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Our team has over 25 years of combined experience in the IT industry. We have highly professional IT experts and dedicated technology team members who have successfully completed 180+ projects for clients worldwide.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 rounded-4 shadow-sm">
+                        <h2 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed fw-semibold rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Do you provide 24/7 support?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes, we provide 24/7 premium support to ensure your business operations run smoothly. Our dedicated support team is always available to assist you with any technical issues or questions.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 rounded-4 shadow-sm">
+                        <h2 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed fw-semibold rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                What makes Techwix different from other IT companies?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                We provide 100% trustable IT solutions with a focus on innovation, quality, and customer satisfaction. Our flexible pricing plans, custom software development, and proven track record of 250+ happy clients make us the preferred choice for businesses worldwide.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item border-0 mb-3 rounded-4 shadow-sm">
+                        <h2 class="accordion-header" id="faq5">
+                            <button class="accordion-button collapsed fw-semibold rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                How do you ensure data security?
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                We implement enterprise-level security measures with 95% data security rating. Our security management solutions include comprehensive protection against modern cyber threats, regular security audits, and compliance with industry standards.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -644,6 +1076,35 @@ get_header(); ?>
                 </form>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section py-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-8 text-center text-lg-start">
+                <h2 class="fw-bold text-white mb-3 display-5">Ready to Transform Your Business?</h2>
+                <p class="text-white opacity-90 mb-4 fs-5">
+                    Accelerate innovation with world-class tech teams. We'll match you to an entire remote team of incredible freelance talent for all your software development needs.
+                </p>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <a href="<?php echo home_url('/contact'); ?>" class="btn btn-light btn-lg rounded-pill px-5 py-3 fw-semibold me-3 mb-3 mb-lg-0">
+                    <i class="fas fa-phone me-2"></i>Get Started Today
+                </a>
+                <a href="<?php echo home_url('/services'); ?>" class="btn btn-outline-light btn-lg rounded-pill px-5 py-3 fw-semibold">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Background Elements -->
+    <div class="position-absolute top-0 end-0 opacity-10">
+        <i class="fas fa-code" style="font-size: 8rem; color: white;"></i>
+    </div>
+    <div class="position-absolute bottom-0 start-0 opacity-10">
+        <i class="fas fa-laptop-code" style="font-size: 6rem; color: white;"></i>
     </div>
 </section>
 

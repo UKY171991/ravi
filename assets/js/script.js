@@ -602,6 +602,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Portfolio Filter
+    $('.portfolio-filter button').on('click', function() {
+        var filterValue = $(this).data('filter');
+        
+        // Update active button
+        $('.portfolio-filter button').removeClass('active');
+        $(this).addClass('active');
+        
+        // Filter portfolio items
+        if (filterValue === 'all') {
+            $('.portfolio-item').fadeIn(300);
+        } else {
+            $('.portfolio-item').hide();
+            $('.portfolio-item[data-category="' + filterValue + '"]').fadeIn(300);
+        }
+    });
+    
     // Close mobile menu when clicking on links
     const mobileNavLinks = document.querySelectorAll('.navbar-nav .nav-link');
     mobileNavLinks.forEach(link => {
